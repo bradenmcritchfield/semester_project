@@ -1,0 +1,7 @@
+I chose the research topic how does features of a board game (number of players, length of time, etc.) impact its popularity.
+I went through a lot of different research ideas, including high school cross country times, tour de france times, and the educational composition of Congress.
+
+Hwever, after talking to Thomas Olse, Joe Bradley, and Camilla McKinnon, I received the feedback that these ideas were either not original or not creative enough.
+They did like my board game idea though and helped me figure out how to use the api on boardgamesgeek.com (i needed a list of IDs to make it work, which I ended up getting from a .csv file on their website)
+
+They also suggested I think of ways I could involve predictive modelling in my research, so as I scraped data, I looked for variables that culd help predict the final rating.
