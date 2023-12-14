@@ -6,6 +6,10 @@ import plotly.express as px
 
 st.title("Board Games Bonanza")
 
+with st.sidebar:
+    with st.echo():
+        st.write("This code will be printed to the sidebar.")
+
 bg = pd.read_csv("DataProject/boardgamesdata.csv")
 
 options = ['Year Published', 'Min Players', 'Max Players', 'Playing Time',
@@ -17,6 +21,8 @@ options = ['Year Published', 'Min Players', 'Max Players', 'Playing Time',
 selected_variable = st.selectbox('Select a variable', options) #First field is prompt, second field is options
 
 plot = sns.histplot(data = bg, x = selected_variable)
+title = "Histogram of " + selected_variable
+plot.title(title)
 
 st.pyplot(plot.get_figure())
 
