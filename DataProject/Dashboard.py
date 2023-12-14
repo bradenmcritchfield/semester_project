@@ -18,5 +18,5 @@ selected_variable = st.selectbox('Select a variable', options) #First field is p
 
 plot = sns.histplot(data = bg, x = selected_variable)
 
-st.pyplot(plot.fig)
+st.pyplot(plot.get_figure())
 
