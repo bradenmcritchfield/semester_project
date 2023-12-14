@@ -9,3 +9,4 @@ bg = pd.read_csv("boardgamesdata.csv")
 
 fig = px.line(bg.groupby('Year Published')['count'].sum())
 st.plotly_chart(fig)
+
