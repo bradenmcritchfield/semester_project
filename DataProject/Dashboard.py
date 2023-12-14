@@ -19,10 +19,9 @@ options = ['Year Published', 'Min Players', 'Max Players', 'Playing Time',
        'GroupSize']
 
 selected_variable = st.selectbox('Select a variable', options) #First field is prompt, second field is options
-
-plot = sns.histplot(data = bg, x = selected_variable)
 title = "Histogram of " + selected_variable
-plot.title(title)
+plot = sns.histplot(data = bg, x = selected_variable).set_title(title)
+
 
 st.pyplot(plot.get_figure())
 
