@@ -6,7 +6,7 @@ import plotly.express as px
 
 st.title("Board Games Bonanza")
 
-bg = pd.read_csv("boardgamesdata.csv")
+bg = pd.read_csv("DataProject/boardgamesdata.csv")
 
 options = ['Year Published', 'Min Players', 'Max Players', 'Playing Time',
        'Age Minimum', 'Number of Accessories', 'Number of Ratings',
