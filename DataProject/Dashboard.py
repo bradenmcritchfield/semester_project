@@ -13,6 +13,7 @@ options = ['Year Published', 'Min Players', 'Max Players', 'Playing Time',
        'Average Rating', 'Bayes Rating', 'Standard Deviation',
        'Average USD Price', 'Age (Years)', 'Time Category', 'AgeRating',
        'GroupSize']
+
 selected_variable = st.selectbox('Select a variable', options) #First field is prompt, second field is options
 
 fig = sns.histplot(data = bg, x = selected_variable)
