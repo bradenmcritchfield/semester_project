@@ -11,6 +11,10 @@ with st.sidebar:
         st.write("This code will be printed to the sidebar.")
 
 bg = pd.read_csv("DataProject/boardgamesdata.csv")
+bg["GroupSize"] = pd.Categorical(bg["GroupSize"], categories = ["Individual", "Small", "Large", "Massive"], ordered = True)
+bg["Time Category"] = pd.Categorical(bg["Time Category"], categories = ["Quick", "Short", "Moderate", "Long", "Very Long", "Marathon"], ordered = True)
+bg["AgeRating"] = pd.Categorical(bg["AgeRating"], categories = ["Young", "PreTeen", "Teen", "Adult", "Any"], ordered = True)
+
 
 options = ['Year Published', 'Min Players', 'Max Players', 'Playing Time',
        'Age Minimum', 'Number of Accessories', 'Number of Ratings',
