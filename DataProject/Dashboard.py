@@ -6,8 +6,7 @@ import plotly.express as px
 
 st.title("Board Games Bonanza")
 
-with st.sidebar:
-    st.write("This data comes courtesy of BoardGameGeek, whose logo will be added shortly.")
+st.sidebar.info("This app is maintained by Braden Critchfield. All data comes from Board Games Geek and was pulled November 18, 2023")
 
 bg = pd.read_csv("DataProject/boardgamesdata.csv")
 bg["GroupSize"] = pd.Categorical(bg["GroupSize"], categories = ["Individual", "Small", "Large", "Massive"], ordered = True)
