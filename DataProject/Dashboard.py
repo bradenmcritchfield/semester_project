@@ -23,6 +23,7 @@ options = ['Year Published', 'Min Players', 'Max Players', 'Playing Time',
 
 with tab1:
        selected_variable = st.selectbox('Select a variable', options) #First field is prompt, second field is options
+       outlier_switch = st.checkbox("Remove Outliers", value = False)
        title = "Histogram of " + selected_variable
        plot = sns.histplot(data = bg, x = selected_variable).set_title(title)
        st.pyplot(plot.get_figure())
