@@ -7,6 +7,7 @@ import plotly.express as px
 st.title("Board Games Bonanza")
 
 st.sidebar.info("This app is maintained by Braden Critchfield. All data comes from Board Games Geek and was accessed November 18, 2023.")
+st.sidebar.image("BGG.webp")
 
 tab1, tab2, tab3 = st.tabs(["Histograms", "Violin Plots", "Over Time"])
 bg = pd.read_csv("DataProject/boardgamesdata.csv")
