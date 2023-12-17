@@ -31,15 +31,15 @@ options3 = ['Min Players', 'Max Players', 'Playing Time',
        'Average USD Price']
 
 
-with tab1:
-       selected_variable = st.selectbox('Select a variable', options) #First field is prompt, second field is options
-       outlier_switch = st.checkbox("Remove Outliers", value = False)
-       if(outlier_switch == False):
-              bg1 = bg
-       else: bg1 = bg_o
-       title = "Histogram of " + selected_variable
-       plot = sns.histplot(data = bg1, x = selected_variable).set_title(title)
-       st.pyplot(plot.get_figure())
+#with tab1:
+ #      selected_variable = st.selectbox('Select a variable', options) #First field is prompt, second field is options
+  #     outlier_switch = st.checkbox("Remove Outliers", value = False)
+   #    if(outlier_switch == False):
+    #          bg1 = bg
+     #  else: bg1 = bg_o
+     #  title = "Histogram of " + selected_variable
+      # plot = sns.histplot(data = bg1, x = selected_variable).set_title(title)
+       #st.pyplot(plot.get_figure())
 
 #with tab2:
        #options2 = ['Time Category', 'AgeRating','GroupSize']
