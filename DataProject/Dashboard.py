@@ -51,7 +51,7 @@ with tab2:
 
 with tab3:
        select_variable2 = st.selectbox("Choose Variable", options3)
-       title = select_variable2 + " by Year Published"
+       title = "Average " + select_variable2 + " by Year Published"
        bg_agg1 = {select_variable2: bg_agg[select_variable2]}
        df = pd.DataFrame(bg_agg1).reset_index()
        plot2 = sns.lineplot(data = df, x = "Year Published", y = select_variable2).set_title(title)
