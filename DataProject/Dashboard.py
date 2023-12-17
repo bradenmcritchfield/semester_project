@@ -26,6 +26,7 @@ options3 = options.remove("Year Published")
 
 bg_1950plus = bg.drop([49, 200, 441, 690, 816, 916, 949])
 bg_grouped = bg_1950plus.groupby("Year Published")
+bg_agg = bg_grouped.mean()
 
 with tab1:
        selected_variable = st.selectbox('Select a variable', options) #First field is prompt, second field is options
@@ -47,6 +48,5 @@ with tab2:
 with tab3:
        select_variable2 = st.selectbox("Choose Variable", options3)
        title = select_variable2 + " by Year Published"
-       data1 = bg_grouped[select_variable2].mean()
-       plot2 = sns.lineplot(data1).set_title(title)
+       plot2 = sns.lineplot(bg_agg, x = "Year Published", y = select_variable2).set_title(title)
        st.pyplot(plot2.get_figure())
