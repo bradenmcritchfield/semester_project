@@ -39,12 +39,12 @@ with tab2:
        plot1 = sns.violinplot(data=bg, y = "Number of Ratings", x = select_variable, palette="Reds").set_title(title)
        st.pyplot(plot1.get_figure())
 
+bg_1950plus = bg.drop([49, 200, 441, 690, 816, 916, 949])
+bg_grouped = bg_1950plus.groupby("Year Published")
 with tab3:
-       bg_1950plus = bg.drop([49, 200, 441, 690, 816, 916, 949])
        options3 = options.remove("Year Published")
        select_variable2 = st.selectbox("Choose Variable", options)
        title = select_variable2 + " by Year Published"
-       bg_grouped = bg_1950plus.groupby("Year Published")
        data = bg_grouped["select_variable2"].mean()
-       plot2 = sns.lineplot(data, x = "Year Published", y = "mean").set_title(title)
+       plot2 = sns.lineplot(data, x = "Year Published", y = "Value").set_title(title)
        st.pyplot(plot2.get_figure())
