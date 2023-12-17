@@ -22,6 +22,8 @@ options = ['Min Players', 'Max Players', 'Playing Time',
        'Average USD Price', 'Age (Years)', 'Time Category', 'AgeRating',
        'GroupSize']
 
+options3 = options.remove("Year Published")
+
 bg_1950plus = bg.drop([49, 200, 441, 690, 816, 916, 949])
 bg_grouped = bg_1950plus.groupby("Year Published")
 
@@ -43,9 +45,8 @@ with tab2:
        st.pyplot(plot1.get_figure())
 
 with tab3:
-       options3 = options.remove("Year Published")
        select_variable2 = st.selectbox("Choose Variable", options3)
        title = select_variable2 + " by Year Published"
-       data = bg_grouped[select_variable2].mean()
-       plot2 = sns.lineplot(data).set_title(title)
+       data1 = bg_grouped[select_variable2].mean()
+       plot2 = sns.lineplot(data1).set_title(title)
        st.pyplot(plot2.get_figure())
