@@ -31,22 +31,22 @@ options3 = ['Min Players', 'Max Players', 'Playing Time',
        'Average USD Price']
 
 
-#with tab1:
- #      selected_variable = st.selectbox('Select a variable', options) #First field is prompt, second field is options
-  #     outlier_switch = st.checkbox("Remove Outliers", value = False)
-   #    if(outlier_switch == False):
-    #          bg1 = bg
-     #  else: bg1 = bg_o
-     #  title = "Histogram of " + selected_variable
-      # plot = sns.histplot(data = bg1, x = selected_variable).set_title(title)
-       #st.pyplot(plot.get_figure())
+with tab1:
+       selected_variable = st.selectbox('Select a variable', options) #First field is prompt, second field is options
+       outlier_switch = st.checkbox("Remove Outliers", value = False)
+       if(outlier_switch == False):
+              bg1 = bg
+       else: bg1 = bg_o
+       title = "Histogram of " + selected_variable
+       plot = sns.histplot(data = bg1, x = selected_variable).set_title(title)
+       st.pyplot(plot.get_figure(), clear_figure = True)
 
-#with tab2:
-       #options2 = ['Time Category', 'AgeRating','GroupSize']
-       #select_variable = st.selectbox('Select a variable', options2)
-       #title = 'Distribution of Number of Ratings by ' + select_variable
-       #plot1 = sns.violinplot(data=bg, y = "Number of Ratings", x = select_variable, palette="Reds").set_title(title)
-       #st.pyplot(plot1.get_figure())
+with tab2:
+       options2 = ['Time Category', 'AgeRating','GroupSize']
+       select_variable = st.selectbox('Select a variable', options2)
+       title = 'Distribution of Number of Ratings by ' + select_variable
+       plot1 = sns.violinplot(data=bg, y = "Number of Ratings", x = select_variable, palette="Reds").set_title(title)
+       st.pyplot(plot1.get_figure(), clear_figure = True)
 
 
 with tab3:
@@ -55,4 +55,4 @@ with tab3:
        bg_agg1 = {select_variable2: bg_agg[select_variable2]}
        df = pd.DataFrame(bg_agg1).reset_index()
        plot2 = sns.lineplot(data = df, x = "Year Published", y = select_variable2).set_title(title)
-       st.pyplot(plot2.get_figure())
+       st.pyplot(plot2.get_figure(), clear_figure = True)
