@@ -43,7 +43,7 @@ with tab2:
        st.pyplot(plot1.get_figure())
 
 with tab3:
-       st.item("test")
+       st.info("test")
        options3 = options.remove("Year Published")
        select_variable2 = st.selectbox("Choose Variable", options)
        title = select_variable2 + " by Year Published"
