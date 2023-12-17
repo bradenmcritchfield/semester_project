@@ -44,7 +44,7 @@ with tab2:
 
 bg_1950plus = bg.drop([49, 200, 441, 690, 816, 916, 949])
 bg_grouped = bg_1950plus.groupby("Year Published")
-bg_agg = bg_grouped.mean()
+bg_agg = bg_grouped.mean(numeric_only = True)
 
 with tab3:
        select_variable2 = st.selectbox("Choose Variable", options3)
