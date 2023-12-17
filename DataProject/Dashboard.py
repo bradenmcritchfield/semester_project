@@ -8,7 +8,7 @@ st.title("Board Games Bonanza")
 
 st.sidebar.info("This app is maintained by Braden Critchfield. All data comes from Board Games Geek and was accessed November 18, 2023.")
 
-tab1, tab2, tab3 = st.tabs(["Histograms", "Violin Plots", "Scatterplots"])
+tab1, tab2, tab3 = st.tabs(["Histograms", "Violin Plots", "Over Time"])
 bg = pd.read_csv("DataProject/boardgamesdata.csv")
 bg["GroupSize"] = pd.Categorical(bg["GroupSize"], categories = ["Individual", "Small", "Large", "Massive"], ordered = True)
 bg["Time Category"] = pd.Categorical(bg["Time Category"], categories = ["Quick", "Short", "Moderate", "Long", "Very Long", "Marathon"], ordered = True)
@@ -33,9 +33,18 @@ with tab1:
        st.pyplot(plot.get_figure())
 
 with tab2:
-       st.info("This is filler right now")
        options2 = ['Time Category', 'AgeRating','GroupSize']
        select_variable = st.selectbox('Select a variable', options2)
        title = 'Distribution of Number of Ratings by ' + select_variable
        plot1 = sns.violinplot(data=bg, y = "Number of Ratings", x = select_variable, palette="Reds").set_title(title)
        st.pyplot(plot1.get_figure())
+
+with tab3:
+       bg_1950plus = bg.drop([49, 200, 441, 690, 816, 916, 949])
+       options3 = options.remove("Year Published")
+       select_variable2 = st.selectbox("Choose Variable", options)
+       title = select_variable2 + " by Year Published"
+       bg_grouped = bg_1950plus.groupby("Year Published")
+       data = bg_grouped["select_variable2"].mean()
+       plot2 = sns.lineplot(data, x = "Year Published", y = "mean").set_title(title)
+       st.pyplot(plot2.get_figure())
