@@ -24,9 +24,6 @@ options = ['Min Players', 'Max Players', 'Playing Time',
 options3 = options
 options3.remove("Year Published")
 
-bg_1950plus = bg.drop([49, 200, 441, 690, 816, 916, 949])
-bg_grouped = bg_1950plus.groupby("Year Published")
-bg_agg = bg_grouped.mean()
 
 with tab1:
        selected_variable = st.selectbox('Select a variable', options) #First field is prompt, second field is options
@@ -44,6 +41,10 @@ with tab2:
        title = 'Distribution of Number of Ratings by ' + select_variable
        plot1 = sns.violinplot(data=bg, y = "Number of Ratings", x = select_variable, palette="Reds").set_title(title)
        st.pyplot(plot1.get_figure())
+
+bg_1950plus = bg.drop([49, 200, 441, 690, 816, 916, 949])
+bg_grouped = bg_1950plus.groupby("Year Published")
+bg_agg = bg_grouped.mean()
 
 with tab3:
        select_variable2 = st.selectbox("Choose Variable", options3)
