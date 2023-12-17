@@ -17,6 +17,7 @@ bg["AgeRating"] = pd.Categorical(bg["AgeRating"], categories = ["Young", "PreTee
 bg_1950plus = bg.drop([49, 200, 441, 690, 816, 916, 949])
 bg_grouped = bg_1950plus.groupby("Year Published")
 bg_agg = bg_grouped.mean(numeric_only = True)
+
 bg_o = bg.drop(index = [49, 131, 164, 156, 51, 93, 200, 441, 473, 690, 816, 823, 916, 949])
 
 options = ['Min Players', 'Max Players', 'Playing Time',
@@ -51,4 +52,7 @@ with tab1:
 with tab3:
        select_variable2 = st.selectbox("Choose Variable", options3)
        title = select_variable2 + " by Year Published"
-       st.line_chart(bg_agg, x="Year Published", y = select_variable2)
+       bg_agg1 = {"Year Published" : bg_agg.index(), select_variable2: bg_agg[select_variable2]}
+       df = pd.DataFrame(bg_agg1)
+       plot2 = sns.lineplot(data = df, x = "Year Published", y = select_variable2).set_title(title)
+       st.pyplot(plot2.get_figure())
