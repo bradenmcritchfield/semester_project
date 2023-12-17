@@ -22,7 +22,10 @@ options = ['Min Players', 'Max Players', 'Playing Time',
        'Average USD Price', 'Age (Years)', 'Time Category', 'AgeRating',
        'GroupSize']
 options3 = options
-options3.remove(["Year Published", "Time Category", 'AgeRating', 'GroupSize'])
+options3.remove("Year Published")
+options3.remove("Time Category")
+options3.remove('AgeRating')
+options3.remove('GroupSize')
 
 
 with tab1:
