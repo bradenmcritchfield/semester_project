@@ -32,3 +32,10 @@ with tab1:
        plot = sns.histplot(data = bg1, x = selected_variable).set_title(title)
        st.pyplot(plot.get_figure())
 
+with tab2:
+       st.info("This is filler right now")
+       options2 = ['Time Category', 'AgeRating','GroupSize']
+       select_variable = st.selectbox('Select a variable', options2)
+       title = 'Distribution of Number of Ratings by ' + select_variable
+       plot1 = sns.violinplot(data=bg, y = "Number of Ratings", x = select_variable, palette="Reds").set_title(title)
+       st.pyplot(plot1.get_figure())
