@@ -46,5 +46,5 @@ with tab3:
        select_variable2 = st.selectbox("Choose Variable", options)
        title = select_variable2 + " by Year Published"
        data = bg_grouped["select_variable2"].mean().reset_index()
-       plot2 = sns.lineplot(data, x = "Year Published", y = select_variable2).set_title(title)
+       plot2 = sns.lineplot(data).set_title(title)
        st.pyplot(plot2.get_figure())
