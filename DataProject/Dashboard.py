@@ -22,6 +22,9 @@ options = ['Min Players', 'Max Players', 'Playing Time',
        'Average USD Price', 'Age (Years)', 'Time Category', 'AgeRating',
        'GroupSize']
 
+bg_1950plus = bg.drop([49, 200, 441, 690, 816, 916, 949])
+bg_grouped = bg_1950plus.groupby("Year Published")
+
 with tab1:
        selected_variable = st.selectbox('Select a variable', options) #First field is prompt, second field is options
        outlier_switch = st.checkbox("Remove Outliers", value = False)
@@ -39,8 +42,6 @@ with tab2:
        plot1 = sns.violinplot(data=bg, y = "Number of Ratings", x = select_variable, palette="Reds").set_title(title)
        st.pyplot(plot1.get_figure())
 
-bg_1950plus = bg.drop([49, 200, 441, 690, 816, 916, 949])
-bg_grouped = bg_1950plus.groupby("Year Published")
 with tab3:
        st.item("test")
        options3 = options.remove("Year Published")
