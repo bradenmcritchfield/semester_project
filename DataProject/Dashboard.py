@@ -51,5 +51,5 @@ bg_agg = bg_grouped.mean(numeric_only = True)
 with tab3:
        select_variable2 = st.selectbox("Choose Variable", options3)
        title = select_variable2 + " by Year Published"
-       plot2 = sns.lineplot(data = bg_agg[select_variable2]).set_title(title)
-       st.pyplot(plot2.get_figure())
+       #plot2 = sns.lineplot(data = bg_agg[select_variable2]).set_title(title)
+       #st.pyplot(plot2.get_figure())
