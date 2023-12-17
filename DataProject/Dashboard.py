@@ -6,9 +6,10 @@ import plotly.express as px
 
 st.title("Board Games Bonanza")
 
-st.sidebar.info("This app is maintained by Braden Critchfield. All data comes from Board Games Geek and was accessed November 18, 2023.")
-st.sidebar.image("BGG.webp")
-st.sidebar.info("Visit bradenmcritchfield.github.io for blog posts about this data.")
+sidebar1 = st.sidebar
+sidebar1.info("This app is maintained by Braden Critchfield. All data comes from Board Games Geek and was accessed November 18, 2023.")
+sidebar1.image("BGG.webp")
+sidebar1.info("Visit bradenmcritchfield.github.io for blog posts about this data.")
 
 tab1, tab2, tab3 = st.tabs(["Histograms", "Violin Plots", "Over Time"])
 bg = pd.read_csv("DataProject/boardgamesdata.csv")
