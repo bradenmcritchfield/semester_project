@@ -42,9 +42,10 @@ with tab2:
 bg_1950plus = bg.drop([49, 200, 441, 690, 816, 916, 949])
 bg_grouped = bg_1950plus.groupby("Year Published")
 with tab3:
+       st.item("test")
        options3 = options.remove("Year Published")
        select_variable2 = st.selectbox("Choose Variable", options)
        title = select_variable2 + " by Year Published"
-       data = bg_grouped["select_variable2"].mean().reset_index()
+       data = bg_grouped["select_variable2"].mean()
        plot2 = sns.lineplot(data).set_title(title)
        st.pyplot(plot2.get_figure())
