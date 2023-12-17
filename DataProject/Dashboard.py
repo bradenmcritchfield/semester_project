@@ -6,7 +6,7 @@ import plotly.express as px
 
 st.title("Board Games Bonanza")
 
-st.sidebar.info("This app is maintained by Braden Critchfield. All data comes from Board Games Geek and was pulled November 18, 2023")
+st.sidebar.info("This app is maintained by Braden Critchfield. All data comes from Board Games Geek and was accessed November 18, 2023.")
 
 tab1, tab2, tab3 = st.tabs(["Histograms", "Violin Plots", "Scatterplots"])
 bg = pd.read_csv("DataProject/boardgamesdata.csv")
