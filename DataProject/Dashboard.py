@@ -14,7 +14,7 @@ bg["GroupSize"] = pd.Categorical(bg["GroupSize"], categories = ["Individual", "S
 bg["Time Category"] = pd.Categorical(bg["Time Category"], categories = ["Quick", "Short", "Moderate", "Long", "Very Long", "Marathon"], ordered = True)
 bg["AgeRating"] = pd.Categorical(bg["AgeRating"], categories = ["Young", "PreTeen", "Teen", "Adult", "Any"], ordered = True)
 
-bg_o = bg.drop(index = [49, 131, 164, 441, 473, 690, 816, 823, 916, 949])
+bg_o = bg.drop(index = [49, 131, 164, 156, 51, 93, 200, 441, 473, 690, 816, 823, 916, 949])
 
 options = ['Min Players', 'Max Players', 'Playing Time',
        'Age Minimum', 'Number of Accessories', 'Number of Ratings', 'Year Published',
