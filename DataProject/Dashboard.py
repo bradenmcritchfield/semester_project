@@ -21,8 +21,8 @@ options = ['Min Players', 'Max Players', 'Playing Time',
        'Average Rating', 'Bayes Rating', 'Standard Deviation',
        'Average USD Price', 'Age (Years)', 'Time Category', 'AgeRating',
        'GroupSize']
-
-options3 = options.remove("Year Published")
+options3 = options
+options3.remove("Year Published")
 
 bg_1950plus = bg.drop([49, 200, 441, 690, 816, 916, 949])
 bg_grouped = bg_1950plus.groupby("Year Published")
