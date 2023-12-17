@@ -14,6 +14,9 @@ bg["GroupSize"] = pd.Categorical(bg["GroupSize"], categories = ["Individual", "S
 bg["Time Category"] = pd.Categorical(bg["Time Category"], categories = ["Quick", "Short", "Moderate", "Long", "Very Long", "Marathon"], ordered = True)
 bg["AgeRating"] = pd.Categorical(bg["AgeRating"], categories = ["Young", "PreTeen", "Teen", "Adult", "Any"], ordered = True)
 
+bg_1950plus = bg.drop([49, 200, 441, 690, 816, 916, 949])
+bg_grouped = bg_1950plus.groupby("Year Published")
+bg_agg = bg_grouped.mean(numeric_only = True)
 bg_o = bg.drop(index = [49, 131, 164, 156, 51, 93, 200, 441, 473, 690, 816, 823, 916, 949])
 
 options = ['Min Players', 'Max Players', 'Playing Time',
@@ -44,12 +47,9 @@ with tab1:
        #plot1 = sns.violinplot(data=bg, y = "Number of Ratings", x = select_variable, palette="Reds").set_title(title)
        #st.pyplot(plot1.get_figure())
 
-bg_1950plus = bg.drop([49, 200, 441, 690, 816, 916, 949])
-bg_grouped = bg_1950plus.groupby("Year Published")
-bg_agg = bg_grouped.mean(numeric_only = True)
 
 with tab3:
        select_variable2 = st.selectbox("Choose Variable", options3)
        title = select_variable2 + " by Year Published"
-       #plot2 = sns.lineplot(data = bg_agg[select_variable2]).set_title(title)
-       #st.pyplot(plot2.get_figure())
+       plot2 = sns.lineplot(data = bg_agg[select_variable2]).set_title(title)
+       st.pyplot(plot2.get_figure())
