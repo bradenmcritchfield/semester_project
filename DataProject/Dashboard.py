@@ -43,7 +43,7 @@ with tab1:
        title = "Histogram of " + selected_variable
        plot = sns.histplot(data = bg1, x = selected_variable).set_title(title)
        st.pyplot(plot.get_figure(), clear_figure = True)
-       st.caption("A histogram for the selected variable.")
+       st.caption("A histogram for the selected variable. Remove outliers if the distribution is difficult to see.")
        #st.info("View specific games:")
        #value_min_input = st.text_input("Insert minimum value for " + selected_variable)
        #value_max_input = st.text_input("Insert maximum value for " + selected_variable)                                
