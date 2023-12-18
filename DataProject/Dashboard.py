@@ -46,7 +46,8 @@ with tab1:
        st.info("View specific games:")
        value_min_input = st.text_input("Insert minimum value for " + selected_variable)
        value_max_input = st.text_input("Insert maximum value for " + selected_variable)                                
-       st.dataframe(bg.loc[bg[selected_variable] >= value_min_input and bg[selected_variable] <= value_max_input ])
+       st.dataframe(bg.loc[(bg[selected_variable] >= value_min_input) and (bg[selected_variable] <= value_max_input) ])
+
 with tab2:
        options2 = ['Time Category', 'AgeRating','GroupSize']
        select_variable = st.selectbox('Select a variable', options2)
