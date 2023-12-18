@@ -17,6 +17,7 @@ sidebar1.write("For more information, visit [my data collection blog post.](%s)"
 sidebar1.write("You can also visit [my data exploration blog post.](%s)" % url2)
 sidebar1.write("For relevant code, visit [my github repository.](%s)" % url3)
 
+st.info("This dashboard explores data from the top 1000 rated board/card games on Board Games Geek.")
 #set tabs
 tab1, tab2, tab3 = st.tabs(["Histograms", "Violin Plots", "Over Time"])
 
@@ -36,7 +37,7 @@ bg_o = bg.drop(index = [49, 131, 164, 156, 51, 93, 200, 441, 473, 690, 816, 823,
 options1 = ['Min Players', 'Max Players', 'Playing Time',
        'Age Minimum', 'Number of Accessories', 'Number of Ratings', 'Year Published',
        'Average Rating', 'Bayes Rating', 'Standard Deviation',
-       'Average USD Price', 'Age (Years)', 'Time Category', 'AgeRating',
+       'Average USD Price', 'Time Category', 'AgeRating',
        'GroupSize']
 options2 = ['Time Category', 'AgeRating','GroupSize']
 options3 = ['Min Players', 'Max Players', 'Playing Time',
@@ -46,7 +47,7 @@ options3 = ['Min Players', 'Max Players', 'Playing Time',
 
 
 with tab1:
-       st.title("Distributions of Variables")
+       st.header("Distributions of Variables")
        selected_variable = st.selectbox('Select a variable', options1) #First field is prompt, second field is options
        outlier_switch = st.checkbox("Remove Outliers", value = False)
        if(outlier_switch == False):
@@ -58,7 +59,7 @@ with tab1:
        st.caption("A histogram for the selected variable. Remove outliers if the distribution is difficult to see.")
       
 with tab2:
-       st.title("Distributions of Number of Ratings")
+       st.header("Distributions of Number of Ratings")
        select_variable = st.selectbox('Select a variable', options2)
        title = 'Distribution of Number of Ratings by ' + select_variable
        plot1 = sns.violinplot(data=bg, y = "Number of Ratings", x = select_variable, palette="Reds").set_title(title)
@@ -66,7 +67,7 @@ with tab2:
        st.caption("The distribution of number of ratings for the selected variable. Notice that there is little significant difference between the different values.")
 
 with tab3:
-       st.title("Trends over Time")
+       st.header("Trends over Time")
        select_variable2 = st.selectbox("Choose Variable", options3)
        title = "Average " + select_variable2 + " by Year Published"
        bg_agg1 = {select_variable2: bg_agg[select_variable2]}
@@ -74,3 +75,6 @@ with tab3:
        plot2 = sns.lineplot(data = df, x = "Year Published", y = select_variable2).set_title(title)
        st.pyplot(plot2.get_figure(), clear_figure = True)
        st.caption("Average of selected variable by year published. For most variables, there is a change as the year gets closer to the present.")
+
+st.header("Explanation of Variables")
+st.info("Min Players: the minimum number of players the game requires. \nMax Players: the maximum number of players the game allows.\nPlaying Time: estimated amount of time a game takes.\nAge Minimum: recommended minimum age of players.\nNumber of Accessories: number of accessories in the game.\nNumber of Ratings: number of people who have given a rating for the game.\nYear Published: the year the game was first published.\nAverage Rating: average of all ratings.\nBayes Rating: average of all ratings plus 30 average ratings.\nStandard Deviation: the standard deviation of the ratings.\nAverage USD Price: average price of games being sold in BGG's marketplace at time of data pull.\nAge (Years): age of the game in years.\nTime Category: category of game based on legnth of gameplay.\nAgeRating: category based on age minimum.\nGroupSize: category based on maximum number of players.")
