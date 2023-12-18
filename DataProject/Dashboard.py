@@ -48,7 +48,7 @@ options3 = ['Min Players', 'Max Players', 'Playing Time',
 
 with tab1:
        st.header("Distributions of Variables")
-       selected_variable = st.selectbox('Select a variable', options1) #First field is prompt, second field is options
+       selected_variable = st.selectbox('Select a variable', options1)
        outlier_switch = st.checkbox("Remove Outliers", value = False)
        if(outlier_switch == False):
               bg1 = bg
@@ -77,4 +77,4 @@ with tab3:
        st.caption("Average of selected variable by year published. For most variables, there is a change as the year gets closer to the present.")
 
 st.header("Explanation of Variables")
-st.info("Min Players: the minimum number of players the game requires. \nMax Players: the maximum number of players the game allows.\nPlaying Time: estimated amount of time a game takes.\nAge Minimum: recommended minimum age of players.\nNumber of Accessories: number of accessories in the game.\nNumber of Ratings: number of people who have given a rating for the game.\nYear Published: the year the game was first published.\nAverage Rating: average of all ratings.\nBayes Rating: average of all ratings plus 30 average ratings.\nStandard Deviation: the standard deviation of the ratings.\nAverage USD Price: average price of games being sold in BGG's marketplace at time of data pull.\nAge (Years): age of the game in years.\nTime Category: category of game based on legnth of gameplay.\nAgeRating: category based on age minimum.\nGroupSize: category based on maximum number of players.")
+st.markdown("**Min Players**: the minimum number of players the game requires.\nMax Players: the maximum number of players the game allows.\nPlaying Time: estimated amount of time a game takes.\nAge Minimum: recommended minimum age of players.\nNumber of Accessories: number of accessories in the game.\nNumber of Ratings: number of people who have given a rating for the game.\nYear Published: the year the game was first published.\nAverage Rating: average of all ratings.\nBayes Rating: average of all ratings plus 30 average ratings.\nStandard Deviation: the standard deviation of the ratings.\nAverage USD Price: average price of games being sold in BGG's marketplace at time of data pull.\nAge (Years): age of the game in years.\nTime Category: category of game based on legnth of gameplay.\nAgeRating: category based on age minimum.\nGroupSize: category based on maximum number of players.")
