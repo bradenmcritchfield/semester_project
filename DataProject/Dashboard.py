@@ -43,6 +43,7 @@ options3 = ['Min Players', 'Max Players', 'Playing Time',
 
 
 with tab1:
+       st.title("Distributions of Variables")
        selected_variable = st.selectbox('Select a variable', options) #First field is prompt, second field is options
        outlier_switch = st.checkbox("Remove Outliers", value = False)
        if(outlier_switch == False):
@@ -58,6 +59,7 @@ with tab1:
        #st.dataframe(bg[(bg[selected_variable] >= value_min_input) and (bg[selected_variable] <= value_max_input) ])
 
 with tab2:
+       st.title("Distributions of Number of Reviews")
        options2 = ['Time Category', 'AgeRating','GroupSize']
        select_variable = st.selectbox('Select a variable', options2)
        title = 'Distribution of Number of Ratings by ' + select_variable
@@ -66,6 +68,7 @@ with tab2:
        st.caption("The distribution of number of ratings for the selected variable. Notice that there is little significant difference between the different values.")
 
 with tab3:
+       st.title("Trends over Time")
        select_variable2 = st.selectbox("Choose Variable", options3)
        title = "Average " + select_variable2 + " by Year Published"
        bg_agg1 = {select_variable2: bg_agg[select_variable2]}
