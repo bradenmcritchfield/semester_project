@@ -43,6 +43,7 @@ with tab1:
        title = "Histogram of " + selected_variable
        plot = sns.histplot(data = bg1, x = selected_variable).set_title(title)
        st.pyplot(plot.get_figure(), clear_figure = True)
+       st.caption("A histogram for the selected variable.")
        #st.info("View specific games:")
        #value_min_input = st.text_input("Insert minimum value for " + selected_variable)
        #value_max_input = st.text_input("Insert maximum value for " + selected_variable)                                
@@ -54,7 +55,7 @@ with tab2:
        title = 'Distribution of Number of Ratings by ' + select_variable
        plot1 = sns.violinplot(data=bg, y = "Number of Ratings", x = select_variable, palette="Reds").set_title(title)
        st.pyplot(plot1.get_figure(), clear_figure = True)
-
+       st.caption("The distribution of number of ratings for the selected variable. Notice that there is little significant difference between the different values.")
 
 with tab3:
        select_variable2 = st.selectbox("Choose Variable", options3)
@@ -63,3 +64,4 @@ with tab3:
        df = pd.DataFrame(bg_agg1).reset_index()
        plot2 = sns.lineplot(data = df, x = "Year Published", y = select_variable2).set_title(title)
        st.pyplot(plot2.get_figure(), clear_figure = True)
+       st.caption("Average of selected variable by year published. For most variables, there is a change as the year gets closer to the present.")
