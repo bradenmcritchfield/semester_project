@@ -1,0 +1,16 @@
+Adam Gao:
+"I liked it. It made sense to me and you answered some important questions."
+
+Thomas Olsen:
+You should consider fixing your graphs (some stuff got cutoff), adjusting your titles for readability, and maybe only have the most important graphs.
+
+Aaron Ostrich:
+Link to your previous post in the first reference
+Use a list for justfying what outliers you removed
+labels are cutoff in some plots
+There is a typo in the header
+center your plots
+Expand your conclusion to wrap things up nicer.
+
+My response:
+Great feedback! I'll implement this.

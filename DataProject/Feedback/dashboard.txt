@@ -1,0 +1,15 @@
+Thomas Olsen:
+"Good ideas for topics and graphs. Make sure to put graphs in tabs to separate them out."
+
+Adam Gao:
+"I liked the histograms and the violin plots. It all made sense to me"
+
+Nathan Sheets (non-classmate):
+"Put background of data before the tabs"
+"Can you smooth the graphs more?"
+"Can you remove the outlier for the USD price over time?"
+
+
+My response: 
+I will put the background about the data before the tabs and an explanation of each variable under the tabs.
+

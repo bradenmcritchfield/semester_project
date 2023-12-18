@@ -1,0 +1,12 @@
+Adam Gao:
+I liked your writeup of the data collection. I could follow your instructions well."
+
+Thomas Olsen:
+For skimmability, add a secondary header in your last section
+
+Aaron Ostrich:
+Check some grammar for api access discussion.
+Beatuiful soup is misspelled.
+
+My response:
+Thanks! Great feedback!
