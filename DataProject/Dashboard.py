@@ -59,7 +59,7 @@ with tab1:
        #st.dataframe(bg[(bg[selected_variable] >= value_min_input) and (bg[selected_variable] <= value_max_input) ])
 
 with tab2:
-       st.title("Distributions of Number of Reviews")
+       st.title("Distributions of Number of Ratings")
        options2 = ['Time Category', 'AgeRating','GroupSize']
        select_variable = st.selectbox('Select a variable', options2)
        title = 'Distribution of Number of Ratings by ' + select_variable
