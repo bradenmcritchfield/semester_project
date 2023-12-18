@@ -67,7 +67,7 @@ with tab2:
        st.caption("The distribution of number of ratings for the selected variable. Notice that there is little significant difference between the different values.")
 
 with tab3:
-       st.header("Trends over Time")
+       st.header("Trends by Age of Game")
        select_variable2 = st.selectbox("Choose Variable", options3)
        title = "Average " + select_variable2 + " by Year Published"
        bg_agg1 = {select_variable2: bg_agg[select_variable2]}
@@ -88,7 +88,6 @@ st.markdown("**Average Rating:** average of all ratings.")
 st.markdown("**Bayes Rating:** average of all ratings plus 30 average ratings.")
 st.markdown("**Standard Deviation:** the standard deviation of the ratings.")
 st.markdown("**Average USD Price:** average price of games being sold in BGG's marketplace at time of data pull.")
-st.markdown("**Age (Years):** age of the game in years.")
 st.markdown("**Time Category:** category of game based on legnth of gameplay.")
 st.markdown("**AgeRating:** category based on age minimum.")
 st.markdown("**GroupSize:** category based on maximum number of players.")
