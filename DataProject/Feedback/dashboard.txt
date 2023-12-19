@@ -11,5 +11,9 @@ Nathan Sheets (non-classmate):
 
 
 My response: 
-I will put the background about the data before the tabs and an explanation of each variable under the tabs.
+I will put the background about the data before the tabs and an explanation of each variable under the tabs. I will smooth the graphs and remove the USD price outlier if I have time.
 
+Creating the dashboard was fun. 
+I faced the challenge that my plots were bleeding into each other. After a lot of trial and error figuring out this was the issue, I added "clear_figure=True" to each plot to fix the issue.
+I also ran into some issues with adding text to the dashboard in new lines, so I just added the text in separate objects.
+Feedback was valuale, especially from a non classmate so I could make the dashboard more usable for someone from a non-data background.

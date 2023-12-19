@@ -14,3 +14,6 @@ Expand your conclusion to wrap things up nicer.
 
 My response:
 Great feedback! I'll implement this.
+
+My blog became more readable and I avoided obvious blunders because of feedback.
+The SHA of the post I shared is 6628f9f62c55ed67fe57493664db2e4bb426f012
